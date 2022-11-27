@@ -1,26 +1,49 @@
 #include <iostream>
 #include <fstream>
 #include "paragon.h"
+#include <string>  
+#include <ios>
 using namespace std;
+fstream file;
+void cleanup()
+{
+    file.open("ticket.txt", ios::out);
+    file.close();
+}
 
-void paragon_godzina (string godzina,string minuta) {
-    fstream file;
-    file.open("ticket.txt", ios::out);	
-    file <<"Godzina: "<<godzina<<":"<<minuta<< endl;
+string int_to_string(int k)
+{
+    std::string str = std::to_string(k);
+    return str;
+}
+
+void paragon_godzina (int godzina, int minuta) {
+    file.open("ticket.txt", ios::app);
+    file << "----------------------" << endl;
+    file << "Godzina: " << int_to_string(godzina) << ":" <<int_to_string(minuta) << endl;
+    file << "----------------------" << endl;
+    file.close();
 };
-void  paragon_stolik (string line) {
-    fstream file;
-    file.open("ticket.txt", ios::out);	
+
+void  paragon_stolik (int line) {
+    file.open("ticket.txt", ios::app);
     file <<"Nr stolika: "<< line << endl;
+    file.close();
 };
 void  paragon_imie (string word1) {
-    fstream file;
-    file.open("ticket.txt", ios::out);	
+
+    file.open("ticket.txt", ios::app);
+    file << "----------------------" << endl;
     file <<"Imie:"<< word1 << endl;
+    file << "----------------------" << endl;
+    file.close();
 };
 
-void  paragon_adres (string miejsc ,string uli ,string nrdom ,string nrmie) {
-    fstream file;
-    file.open("ticket.txt", ios::out);	
-    file <<"Adres: " << miejsc <<"Ulica"<< uli <<"Nr domu"<< nrdom << "/"<< nrmie <<endl;
+void  paragon_adres (string miejsc ,string uli , int nrdom , int nrmie) {
+    file.open("ticket.txt", ios::app);
+    file << "----------------------" << endl;
+    file <<"Adres: " << miejsc <<"Ulica"<< uli << endl;
+    file <<"Nr domu: "<< nrdom << "/"<< nrmie <<endl;
+    file << "----------------------" << endl;
+    file.close();
 };
