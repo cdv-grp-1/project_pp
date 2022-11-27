@@ -11,10 +11,10 @@
   "danie1": {
     "id": 1,
     "type": "przystawki",
-    "name": "sledź zagrycha",
+    "name": "sledz zagrycha",
     "text": "w zaprawie z selera naciowego",
     "price": 21.37,
-    "ingr": "sledź, salata, orzechy"
+    "ingr": "sledz, salata, orzechy"
   },
   "danie2": {
     "id": 2,
@@ -142,7 +142,7 @@
     "name": "Parfait chalwowe przez nas utarte",
     "text": "z beze pistacjowe na soku z pomarańczy",
     "price": 34,
-    "ingr": "chalwa, jaja, pomarańcza"
+    "ingr": "chalwa, jaja, pomarancza"
   },
   "danie18": {
     "id": 18,
