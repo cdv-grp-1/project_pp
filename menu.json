@@ -1,0 +1,173 @@
+{
+  "danie0": {
+    "id": 0,
+    "type": "control",
+    "name": "control",
+    "text": "control",
+    "price": 0,
+    "ingr": "control"
+  },
+
+  "danie1": {
+    "id": 1,
+    "type": "przystawki",
+    "name": "sledź zagrycha",
+    "text": "w zaprawie z selera naciowego",
+    "price": 21.37,
+    "ingr": "sledź, salata, orzechy"
+  },
+  "danie2": {
+    "id": 2,
+    "type": "przystawki",
+    "name": "Tatar po polsku z poledwicy",
+    "text": "z wiejskim zoltkiem na bogato",
+    "price": 21,
+    "ingr": "mieso wolowe, jaja, ocet"
+  },
+  "danie3": {
+    "id": 3,
+    "type": "przystawki",
+    "name": "Pasztet z dziczyzny",
+    "text": "u nas pieczony w towarzystwie marynat i chrzanu",
+    "price": 42,
+    "ingr": "dziczyzna, sos sojowy, buraki"
+  },
+  "danie4": {
+    "id": 4,
+    "type": "przystawki",
+    "name": "Carpaccio z buraka",
+    "text": "z serem solan na rukoli w winegrecie koperkowym",
+    "price": 25.50,
+    "ingr": "buraki, salata, jaja"
+  },
+  "danie5": {
+    "id": 5,
+    "type": "przystawki",
+    "name": "Deska wedzonych wedlin",
+    "text": "z piklami z Delikatesow Magdy",
+    "price": 65,
+    "ingr": "dziczyzna, wolowina, drob"
+  },
+  "danie6": {
+    "id": 6,
+    "type": "przystawki",
+    "name": "Deska polskich, kozich serow",
+    "text": "dla dwoch osob, do wina i nie tylko",
+    "price": 30.20,
+    "ingr": "ser kozi, ser wedzony, ser plesniowy"
+  },
+  "danie7": {
+    "id": 7,
+    "type": "dania glowne",
+    "name": "Kotleciki cielece",
+    "text": "z kostke, z jajem sadzonym i mizerie po polsku",
+    "price": 23.45,
+    "ingr": "cielecina, jaja, ser"
+  },
+  "danie8": {
+    "id": 8,
+    "type": "dania glowne",
+    "name": "Schabowy chrupiecy domowy",
+    "text": "z zasmazane kapuste, na cale patelnie",
+    "price": 34,
+    "ingr":  "wolowina, kapusta, buraki"
+  },
+  "danie9": {
+    "id": 9,
+    "type": "dania glowne",
+    "name": "Gicz cieleca",
+    "text": "z domowymi kluskami sleskimi i porem",
+    "price": 100,
+    "ingr": "cielecina, por, kluski"
+  },
+  "danie10": {
+    "id": 10,
+    "type": "dania glowne",
+    "name": "lopatka jagnieca",
+    "text": "pieczona w zaprawie z rozmarynu, tymianku i wina, podana z ryzem pilaw i pomidorami cherry w cukrze",
+    "price": 45,
+    "ingr": "jagniecina, rozmaryn, ryz"
+  },
+  "danie11": {
+    "id": 11,
+    "type": "dania glowne",
+    "name": "Kaczka",
+    "text": "bardzo po polsku z pieczone antonowke, cala polowka",
+    "price": 36,
+    "ingr": "kaczka, jablka, wino czerwone"
+  },
+  "danie12": {
+    "id": 12,
+    "type": "dania glowne",
+    "name": "Risotto",
+    "text": "wedlug pogody i humoru",
+    "price": 90,
+    "ingr": "w zaleznosci od pogody i humoru"
+  },
+  "danie13": {
+    "id": 13,
+    "type": "dania glowne",
+    "name": "Golebki z kasze gryczane",
+    "text": "z sosem z prawdziwych pomidorow pelnych slońca",
+    "price": 35.73,
+    "ingr": "wolowina, ryz, kapusta"
+  },
+  "danie14": {
+    "id": 14,
+    "type": "dania glowne",
+    "name": "Antrykot marmurkowy na kamieniu",
+    "text": "z wiosenne salate, sosem BBQ i aioli",
+    "price": 20.99,
+    "ingr": "antrykot, salata, sos BBQ"
+  },
+  "danie15": {
+    "id": 15,
+    "type": "desery",
+    "name": "Zupa nic i juz",
+    "text": "i jeszcze pistacjowa beza chmurka i lody i owoce",
+    "price": 11.99,
+    "ingr": "jaja, smietana, owoce"
+  },
+  "danie16": {
+    "id": 16,
+    "type": "desery",
+    "name": "Moelleux au chocolat",
+    "text": "wybornie czekoladowy z lodami w orzechach",
+    "price": 25.60,
+    "ingr": "czekolada, smietana, orzechy"
+  },
+  "danie17": {
+    "id": 17,
+    "type": "desery",
+    "name": "Parfait chalwowe przez nas utarte",
+    "text": "z beze pistacjowe na soku z pomarańczy",
+    "price": 34,
+    "ingr": "chalwa, jaja, pomarańcza"
+  },
+  "danie18": {
+    "id": 18,
+    "type": "desery",
+    "name": "Rubinowa szarlotka zapieczona beze",
+    "text": "z pijanym sosem angielskim i z cynamonem i juz",
+    "price": 34,
+    "ingr": "jablka, cynamon, likier"
+  },
+  "danie19": {
+    "id": 19,
+    "type": "desery",
+    "name": "Sernik",
+    "text": "spod Krakowa z rodzynkami",
+    "price": 4.20,
+    "ingr": "ser, rodzynki"
+  },
+  "danie20": {
+    "id": 20,
+    "type": "desery",
+    "name": "Puchar lodowy",
+    "text": "z owocami sezonowymi",
+    "price": 6.66,
+    "ingr": "smietana, owoce"
+  }
+  
+}
+
