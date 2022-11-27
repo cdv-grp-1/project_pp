@@ -2,6 +2,7 @@
 #include "data.h"
 #include "kontrola_liczb.h"
 #include "czas.h"
+#include "menu.h"
 #include "paragon.h"
 using namespace std;
 
@@ -11,6 +12,7 @@ bool na_miejscu;
 
 
 int main() {
+    menu_lista();
     cleanup();
     imie = podaj_imie();
     na_miejscu = podaj_miejsce();
@@ -27,6 +29,7 @@ int main() {
         podaj_godzine(godzina, minuta, dzien_tyg, godz_dow, min_dow);
 
     }
+    
     //Koniec programu - zapisanie do TXT
     if (na_miejscu)
     {

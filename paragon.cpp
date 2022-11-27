@@ -38,11 +38,17 @@ void  paragon_imie (string word1) {
     file << "----------------------" << endl;
     file.close();
 };
-
-void  paragon_adres (string miejsc ,string uli , int nrdom , int nrmie) {
+void  paragon_adres(string miejsc, string uli, int nrdom, int nrmie) {
     file.open("ticket.txt", ios::app);
     file << "----------------------" << endl;
-    file <<"Adres: " << miejsc <<", "<< uli << " " << nrdom << "/" << nrmie << endl;
+    file << "Adres: " << miejsc << ", " << uli << " " << nrdom << "/" << nrmie << endl;
     file << "----------------------" << endl;
+    file.close();
+};
+void paragon_pozycja(string nazwa, int price, int porcja, int suma)
+{
+    file.open("ticket.txt", ios::app);
+    file << "----------------------" << endl;
+    file << "Pozycja:" << nazwa<<"|"<< "Cena:" << price<< "|" <<"Ilosc:" << porcja << "|" << suma << endl;
     file.close();
 };
