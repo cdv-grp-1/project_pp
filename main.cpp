@@ -2,7 +2,6 @@
 #include "data.h"
 #include "kontrola_liczb.h"
 #include "czas.h"
-#include "menu.h"
 #include "paragon.h"
 using namespace std;
 
