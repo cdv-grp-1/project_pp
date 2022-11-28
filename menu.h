@@ -7,3 +7,5 @@
 using namespace std;
 
 void menu_lista();
+string menu_nazwa(int);
+void menu_dodaj();

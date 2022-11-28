@@ -45,7 +45,7 @@ void  paragon_adres(string miejsc, string uli, int nrdom, int nrmie) {
     file << "----------------------" << endl;
     file.close();
 };
-void paragon_pozycja(string nazwa, int price, int porcja, int suma)
+void paragon_pozycja(string nazwa, double price, int porcja, double suma)
 {
     file.open("ticket.txt", ios::app);
     file << "----------------------" << endl;
