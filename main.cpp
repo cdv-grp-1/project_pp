@@ -12,10 +12,6 @@ bool na_miejscu;
 
 
 int main() {
-    menu_nazwa(kontrola_liczby());    
-    menu_lista();
-
-    menu_dodaj();
     cleanup();
     imie = podaj_imie();
     na_miejscu = podaj_miejsce();
@@ -32,7 +28,9 @@ int main() {
         podaj_godzine(godzina, minuta, dzien_tyg, godz_dow, min_dow);
 
     }
-
+    //menu_nazwa(kontrola_liczby());
+    menu_lista();
+    menu_dodaj();
     //Koniec programu - zapisanie do TXT
     if (na_miejscu)
     {
