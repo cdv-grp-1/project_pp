@@ -7,7 +7,7 @@
 
 using namespace std;
 using json = nlohmann::json;
-ifstream f("menu.json");
+
 
 namespace ns {
 	struct meal_m {
@@ -43,9 +43,10 @@ namespace ns {
 
 
 void menu_lista() {
-	json data;
 	
-	f >> data;
+	ifstream f("menu.json");
+	json data = json::parse(f);
+	f.close();
 	string licznik[21] = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" };
 	int x = 0;
 	cout << "~~MENU~~" << endl;
@@ -59,38 +60,43 @@ void menu_lista() {
 		cout << "------------------" << endl;
 		x++;
 	}
-	
+
 };
 string menu_nazwa(int id)
+
 {
+	ifstream f("menu.json");
 	string licznik[21] = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" };
-	json data;
-	f >> data;
+	json data = json::parse(f);
+	f.close();
 	auto m = data.at("danie" + licznik[id]).get<ns::meal_m>();
 	cout << "Nazwa: " << m.name<<" Opis: " << m.type << " Cena: " << m.price;
 	return m.name, m.type;
 };
 double menu_cena(int id)
 {
+	ifstream f("menu.json");
 	string licznik[21] = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" };
-	json data;
-	f >> data;
+	json data = json::parse(f);
+	f.close();
 	auto m = data.at("danie" + licznik[id]).get<ns::meal_m>();
+
 	return m.price;
 };
 
 void menu_dodaj()
 {
+	ifstream f("menu.json");
 	cout << "Wybierz danie" << endl;
 	int id = kontrola_liczby();
 	string licznik[21] = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" };
-	json data;
-	f >> data;
+	json data = json::parse(f);
+	f.close();
 	auto m = data.at("danie" + licznik[id]).get<ns::meal_m>();
 	cout << "Nazwa: " << m.name << endl;
 	cout << "Rodzaj: " << m.type << endl;
 	cout << "Cena: " << m.price << endl;
-	cout << "Czy chcesz dodać to danie za: " << m.price << "?" << endl;
+	cout << "Czy chcesz dodac to danie za: " << m.price << "?" << endl;
 	cout << "1.Tak 2.Nie " << endl;
 	int wybor = kontrola_liczby();
 	if (wybor == 1)
@@ -98,15 +104,44 @@ void menu_dodaj()
 		cout << "Ile porcji?" << endl;
 		int porcje = kontrola_liczby();
 		double suma = porcje * m.price;
-		cout << "Razem" << suma * porcje << endl;
-		cout << "Czy zatwierdzić?" << endl;
+		double razem=0;
+		cout << "Razem: " << suma << endl;
+		cout << "Czy zatwierdzic?" << endl;
 		cout << "1.Tak 2.Nie " << endl;
-		int potwierdz = kontrola_liczby();
-		if (potwierdz == 1)
+		wybor = kontrola_liczby();
+		if (wybor == 1)
 		{
 			paragon_pozycja(m.name, m.price, porcje, suma);
-			cout << "dodano: " << m.name << "Cena:" << m.price << "Porcje" << porcje << "Suma:" << suma;
-			cout << "1.Kontynuuj 2.To wszystko 3.Anuluj zamówienie 4.Wyjdź" << endl;
+			cout << "----------------" << endl;
+			cout << "dodano: " << m.name <<" " << "Cena: " << m.price << " " << "Porcje: " << " " << porcje << endl;
+			cout << "----------------" << endl;
+			cout << "Suma: " << suma << endl;
+			cout << "----------------" << endl;
+			cout << "1.Kontynuuj 2.To wszystko 3.Anuluj zamowienie 4.Wyjdz" << endl;
+			wybor = kontrola_liczby();
+			if (wybor == 1) 
+				{ 
+				menu_dodaj();
+				
+				}
+			if (wybor == 2) 
+				{
+					cout << "----------------" << endl;
+					cout << "ZYCZYMY SMACZNEGO" << endl;
+					cout << "----------------" << endl;
+				}
+			if (wybor == 3) 
+				{	wybor = kontrola_liczby(); 
+					cout << "czy anulować?" << endl;
+					cout << "1.Tak 2.Nie" << endl;
+					if (wybor == 1) { cleanup(); }
+					if (wybor == 2) { menu_dodaj(); }
+				}
+			if (wybor == 4) 
+				{  
+
+				}
 		}
 	}
+
 };
