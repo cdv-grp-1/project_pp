@@ -16,7 +16,7 @@ void dodaj(string nazwa, int portion, int price)
 }
 void dodaj_do_tablicy(int tablica_zamowienia[20][2], int id, int porcje)
 {
-	for (int i = 0; i <= 50; i++)
+	for (int i = 0; i < 50; i++)
 	{
 		if (tablica_zamowienia[i][0] == id)
 		{
@@ -32,6 +32,19 @@ void dodaj_do_tablicy(int tablica_zamowienia[20][2], int id, int porcje)
 				break;
 			}
 		}
-		
+
 	}
-}
+};
+bool czy_jest_dodane(int tablica_zamowienia[20][2], int podaj_id)
+{
+	for (int i = 0; i < 50; i++)
+	{
+		if (tablica_zamowienia[i][0] == podaj_id)
+		{
+			return true;
+		}
+	}
+	cout << "Nie zamawiales takiego dania!" << endl;
+	return false;
+
+};

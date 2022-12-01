@@ -119,7 +119,7 @@ void menu_dodaj(int tablica_zamowienia[20][2])
 			cout << "----------------" << endl;
 			cout << "Suma: " << suma << endl;
 			cout << "----------------" << endl;
-			cout << "1.Kontynuuj 2.To wszystko 3.Anuluj zamowienie 4.Wyjdz" << endl;
+			cout << "1.Kontynuuj 2.To wszystko 3.Anuluj zamowienie 4.Usun danie 5.Wyjdz" << endl;
 			wybor = kontrola_liczby();
 			if (wybor == 1) 
 				{ 
@@ -145,7 +145,16 @@ void menu_dodaj(int tablica_zamowienia[20][2])
 				}
 			if (wybor == 4) 
 				{  
+				int podaj_id = 0;
+				// tutaj wyswietla sie zamowione dania i ich ilosc
+				//
 
+				do 
+				{
+					cout << "Ktore danie chcesz usunac?" << endl;
+					podaj_id = kontrola_liczby();
+				} while (!(czy_jest_dodane(tablica_zamowienia, podaj_id)));
+				
 				}
 		}
 	}
