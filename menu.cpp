@@ -117,7 +117,7 @@ void menu_dodaj(int tablica_zamowienia[20][2])
 			cout << "----------------" << endl;
 			cout << "Suma: " << suma << endl;
 			cout << "----------------" << endl;
-			cout << "1.Kontynuuj 2.To wszystko 3.Anuluj zamowienie 4.Usun danie 5.Wyjdz" << endl;
+			cout << "1.Dodaj kolejne danie 2.Zamow 3.Wyswietl zamowienie 4.Usun danie 5. Anuluj zamowienie 6.Koniec" << endl;
 			wybor = kontrola_liczby();
 			if (wybor == 1) 
 				{ 
@@ -130,16 +130,11 @@ void menu_dodaj(int tablica_zamowienia[20][2])
 					cout << "ZYCZYMY SMACZNEGO" << endl;
 					cout << "----------------" << endl;
 				}
-			if (wybor == 3) 
-				{	
-				do
-				{
-					cout << "czy anulowac?" << endl;
-					cout << "1.Tak 2.Nie" << endl;
-					wybor = kontrola_liczby();
-					if (wybor == 1) { cleanup(); }
-					if (wybor == 2) { menu_dodaj(tablica_zamowienia); }
-				} while (wybor != 1 && wybor != 2);
+			if (wybor == 3)
+			{
+				wyswietl_zamowienia_z_tablicy(tablica_zamowienia);
+			}
+			
 				}
 			if (wybor == 4) 
 				{  
@@ -159,6 +154,17 @@ void menu_dodaj(int tablica_zamowienia[20][2])
 				usun_z_tablicy(tablica_zamowienia, id, porcje);
 				 
 				}
+			if (wybor == 5)
+			{
+				do
+				{
+					cout << "czy anulowac?" << endl;
+					cout << "1.Tak 2.Nie" << endl;
+					wybor = kontrola_liczby();
+					if (wybor == 1) { cleanup(); }
+					if (wybor == 2) { menu_dodaj(tablica_zamowienia); }
+				} while (wybor != 1 && wybor != 2);
+			
 		}
 	}
 

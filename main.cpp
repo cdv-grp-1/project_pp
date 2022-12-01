@@ -36,7 +36,7 @@ int main() {
     menu_dodaj(tablica_zamowienia);
 
     // Podglad tablicy
-    for (int i = 0; i < 20; i++)
+    /*for (int i = 0; i < 20; i++)
     {  
         if (tablica_zamowienia[i][0] != 0)
         {
@@ -44,7 +44,7 @@ int main() {
             cout << "   ilosc:  " << tablica_zamowienia[i][1];
             cout << endl;
         }
-    }
+    }*/
     //
     
     //Koniec programu - zapisanie do TXT
