@@ -80,7 +80,7 @@ double menu_cena(int id)
 	json data = json::parse(f);
 	f.close();
 	auto m = data.at("danie" + licznik[id]).get<ns::meal_m>();
-
+	cout <<" Cena: " << m.price;
 	return m.price;
 };
 
