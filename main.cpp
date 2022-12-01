@@ -4,7 +4,7 @@
 #include "czas.h"
 #include "menu.h"
 #include "paragon.h"
-#include "dodawanie.h"
+#include "zamowienie.h"
 using namespace std;
 
 int nr, nr_domu, nr_mieszkania, minuta, godzina, dzien_tyg, godz_dow, min_dow;
