@@ -145,16 +145,21 @@ void menu_dodaj(int tablica_zamowienia[20][2])
 				}
 			if (wybor == 4) 
 				{  
-				int podaj_id = 0;
+				
 				// tutaj wyswietla sie zamowione dania i ich ilosc
 				//
 
 				do 
 				{
 					cout << "Ktore danie chcesz usunac?" << endl;
-					podaj_id = kontrola_liczby();
-				} while (!(czy_jest_dodane(tablica_zamowienia, podaj_id)));
+					id = kontrola_liczby();
+				} while (!(czy_jest_dodane(tablica_zamowienia, id)));
 				
+				
+				cout << "Ile porcji usunac?" << endl;
+				porcje = kontrola_liczby();
+				usun_z_tablicy(tablica_zamowienia, id, porcje);
+				 
 				}
 		}
 	}

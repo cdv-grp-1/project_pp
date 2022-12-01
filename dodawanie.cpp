@@ -35,11 +35,11 @@ void dodaj_do_tablicy(int tablica_zamowienia[20][2], int id, int porcje)
 
 	}
 };
-bool czy_jest_dodane(int tablica_zamowienia[20][2], int podaj_id)
+bool czy_jest_dodane(int tablica_zamowienia[20][2], int id)
 {
 	for (int i = 0; i < 50; i++)
 	{
-		if (tablica_zamowienia[i][0] == podaj_id)
+		if (tablica_zamowienia[i][0] == id)
 		{
 			return true;
 		}
@@ -47,4 +47,19 @@ bool czy_jest_dodane(int tablica_zamowienia[20][2], int podaj_id)
 	cout << "Nie zamawiales takiego dania!" << endl;
 	return false;
 
+};
+void usun_z_tablicy(int tablica_zamowienia[20][2], int id, int porcje)
+{
+	for (int i = 0; i < 50; i++)
+	{
+		if (tablica_zamowienia[i][0] == id)
+		{
+			tablica_zamowienia[i][1] -= porcje;
+			if (tablica_zamowienia[i][1] < 0)
+			{
+				tablica_zamowienia[i][1] = 0;
+			}
+			break;
+		}
+	}
 };
