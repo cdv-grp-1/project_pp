@@ -4,6 +4,7 @@
 #include <string>
 #include "paragon.h"
 #include "kontrola_liczb.h"
+#include "dodawanie.h"
 
 using namespace std;
 using json = nlohmann::json;
@@ -84,7 +85,7 @@ double menu_cena(int id)
 	return m.price;
 };
 
-void menu_dodaj()
+void menu_dodaj(int tablica_zamowienia[20][2])
 {
 	ifstream f("menu.json");
 	cout << "Wybierz danie" << endl;
@@ -111,6 +112,9 @@ void menu_dodaj()
 		wybor = kontrola_liczby();
 		if (wybor == 1)
 		{
+			cout << "123";
+			dodaj_do_tablicy(tablica_zamowienia, id, porcje);
+			cout << "456";
 			paragon_pozycja(m.name, m.price, porcje, suma);
 			cout << "----------------" << endl;
 			cout << "dodano: " << m.name <<" " << "Cena: " << m.price << " " << "Porcje: " << " " << porcje << endl;
@@ -121,7 +125,7 @@ void menu_dodaj()
 			wybor = kontrola_liczby();
 			if (wybor == 1) 
 				{ 
-				menu_dodaj();
+				menu_dodaj(tablica_zamowienia);
 				
 				}
 			if (wybor == 2) 
@@ -135,7 +139,7 @@ void menu_dodaj()
 					cout << "czy anulować?" << endl;
 					cout << "1.Tak 2.Nie" << endl;
 					if (wybor == 1) { cleanup(); }
-					if (wybor == 2) { menu_dodaj(); }
+					if (wybor == 2) { menu_dodaj(tablica_zamowienia); }
 				}
 			if (wybor == 4) 
 				{  
