@@ -9,3 +9,4 @@ using namespace std;
 void menu_lista();
 string menu_nazwa(int);
 void menu_dodaj(int [20][2]);
+double menu_cena(int);

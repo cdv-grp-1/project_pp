@@ -71,8 +71,7 @@ string menu_nazwa(int id)
 	json data = json::parse(f);
 	f.close();
 	auto m = data.at("danie" + licznik[id]).get<ns::meal_m>();
-	cout << "Nazwa: " << m.name<<" Opis: " << m.type << " Cena: " << m.price;
-	return m.name, m.type;
+	return m.name;
 };
 double menu_cena(int id)
 {
@@ -145,7 +144,7 @@ void menu_dodaj(int tablica_zamowienia[20][2])
 				}
 			if (wybor == 4) 
 				{  
-				
+					wyswietl_zamowienia_z_tablicy(tablica_zamowienia);
 				// tutaj wyswietla sie zamowione dania i ich ilosc
 				//
 
