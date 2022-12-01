@@ -112,9 +112,7 @@ void menu_dodaj(int tablica_zamowienia[20][2])
 		wybor = kontrola_liczby();
 		if (wybor == 1)
 		{
-			cout << "123";
 			dodaj_do_tablicy(tablica_zamowienia, id, porcje);
-			cout << "456";
 			paragon_pozycja(m.name, m.price, porcje, suma);
 			cout << "----------------" << endl;
 			cout << "dodano: " << m.name <<" " << "Cena: " << m.price << " " << "Porcje: " << " " << porcje << endl;
