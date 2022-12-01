@@ -30,8 +30,7 @@ int main() {
         podaj_godzine(godzina, minuta, dzien_tyg, godz_dow, min_dow);
 
     }
-    //wyswietla wszystkie dania w na liscie
-    menu_lista();
+    
     //menu programu
     menu_glowne(tablica_zamowienia);
 

@@ -49,18 +49,22 @@ void menu_lista() {
 	json data = json::parse(f);
 	f.close();
 	string licznik[21] = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" };
-	int x = 0;
+	
 	cout << "~~MENU~~" << endl;
-	for (int i = 0; i <= 20; i++) {
-		auto m = data.at("danie" + licznik[x]).get<ns::meal_m>();
-		cout << "Pozycja nr. " << m.id << endl;
+	for (int i = 1; i <= 20; i++) {
+		auto m = data.at("danie" + licznik[i]).get<ns::meal_m>();
+		cout << "------------------------------------------------------------";
+		cout << "---------------------------------------------------------" << endl;
+		cout << "Pozycja nr. " << setw(2) << m.id << setw(100) << m.price << "PLN" << endl;
 		cout << m.type << endl;
 		cout << m.name << " " << m.text << endl;
 		cout << "Skladniki: " << m.ingr << endl;
-		cout << "Cena: " << m.price << endl;
-		cout << "------------------" << endl;
-		x++;
-	}
+		//cout << "Cena: " << m.price << endl;
+		//cout << "------------------" << endl;
+		
+	};
+	cout << "------------------------------------------------------------";
+	cout << "---------------------------------------------------------" << endl;
 
 };
 string menu_nazwa(int id)
@@ -91,7 +95,7 @@ void menu_glowne(int tablica_zamowienia[20][2])
 	int blad = false;
 	do
 	{
-		cout << "1.Dodaj danie 2.Sfinalizuj zamowienie 3.Wyswietl zamowienie 4.Usun danie 5. Anuluj zamowienie 6.Koniec" << endl;
+		cout << "1.Dodaj danie 2.Wyswietl menu 3.Wyswietl zamowienie 4.Usun danie 5. Anuluj zamowienie 6.Sfinalizuj zamowienie" << endl;
 		wybor = kontrola_liczby();
 		switch (wybor)
 		{
@@ -130,11 +134,9 @@ void menu_glowne(int tablica_zamowienia[20][2])
 		}
 		case 2:
 		{
-			cout << "----------------" << endl;
-			cout << "ZYCZYMY SMACZNEGO" << endl;
-			cout << "----------------" << endl;
-			break;
+			menu_lista();
 		}
+		
 		case 3:
 		{
 			wyswietl_zamowienia_z_tablicy(tablica_zamowienia);
@@ -166,8 +168,16 @@ void menu_glowne(int tablica_zamowienia[20][2])
 			} while (wybor != 1 && wybor != 2);
 
 		}
+		case 6:
+		{
+			cout << "----------------" << endl;
+			cout << "ZYCZYMY SMACZNEGO" << endl;
+			cout << "----------------" << endl;
+			break;
+		}
+		
 		} 
-	} while (true);
+	} while (wybor !=6);
 };
 
 void menu_dodaj(int tablica_zamowienia[20][2])
