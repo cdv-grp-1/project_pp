@@ -83,9 +83,96 @@ double menu_cena(int id)
 	return m.price;
 };
 
+void menu_glowne(int tablica_zamowienia[20][2])
+{
+	int wybor = 0;
+	int id = 0;
+	int porcje = 0;
+	int blad = false;
+	do
+	{
+		cout << "1.Dodaj danie 2.Sfinalizuj zamowienie 3.Wyswietl zamowienie 4.Usun danie 5. Anuluj zamowienie 6.Koniec" << endl;
+		wybor = kontrola_liczby();
+		switch (wybor)
+		{
+		case 1:
+		{
+			do {
+				cout << "Wybierz danie" << endl;
+				id = kontrola_liczby();
+				if (id < 1 || id > 20) {
+					cout << "Nie ma takiego dania" << endl;
+					blad = true;
+				}
+				else
+				{
+					blad = false;
+				}
+			} while (blad);
+
+			do {
+			cout << "Ile porcji?" << endl;
+			porcje = kontrola_liczby();
+			if (porcje < 1 || porcje > 20) 
+			{
+				cout << "Mozesz zamowic maksymalnie 20 porcji" << endl;
+				blad = true;
+			}
+			else
+			{
+				blad = false;
+			}
+			} while (blad);
+
+			dodaj_do_tablicy(tablica_zamowienia, id, porcje);
+			cout << "Pomyslnie dodano danie do zamowienia "<< endl;
+			break;
+		}
+		case 2:
+		{
+			cout << "----------------" << endl;
+			cout << "ZYCZYMY SMACZNEGO" << endl;
+			cout << "----------------" << endl;
+			break;
+		}
+		case 3:
+		{
+			wyswietl_zamowienia_z_tablicy(tablica_zamowienia);
+			break;
+		}
+		case 4:
+		{
+			wyswietl_zamowienia_z_tablicy(tablica_zamowienia);
+			do
+			{
+				cout << "Ktore danie chcesz usunac?" << endl;
+				id = kontrola_liczby();
+			} while (!(czy_jest_dodane(tablica_zamowienia, id)));
+
+			cout << "Ile porcji usunac?" << endl;
+			porcje = kontrola_liczby();
+			usun_z_tablicy(tablica_zamowienia, id, porcje);
+			break;
+		}
+		case 5:
+		{
+			do
+			{
+				cout << "czy anulowac?" << endl;
+				cout << "1.Tak 2.Nie" << endl;
+				wybor = kontrola_liczby();
+				if (wybor == 1) { cleanup(); }
+				
+			} while (wybor != 1 && wybor != 2);
+
+		}
+		} 
+	} while (true);
+};
+
 void menu_dodaj(int tablica_zamowienia[20][2])
 {
-	ifstream f("menu.json");
+	/*ifstream f("menu.json");
 	cout << "Wybierz danie" << endl;
 	int id = kontrola_liczby();
 	string licznik[21] = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" };
@@ -105,67 +192,19 @@ void menu_dodaj(int tablica_zamowienia[20][2])
 		double suma = porcje * m.price;
 		double razem=0;
 		cout << "Razem: " << suma << endl;
-		cout << "Czy zatwierdzic?" << endl;
-		cout << "1.Tak 2.Nie " << endl;
+		//cout << "Czy zatwierdzic?" << endl;
+		//cout << "1.Tak 2.Nie " << endl;
 		wybor = kontrola_liczby();
 		if (wybor == 1)
 		{
 			dodaj_do_tablicy(tablica_zamowienia, id, porcje);
 			paragon_pozycja(m.name, m.price, porcje, suma);
 			cout << "----------------" << endl;
-			cout << "dodano: " << m.name <<" " << "Cena: " << m.price << " " << "Porcje: " << " " << porcje << endl;
+			cout << "dodano: " << m.name << " " << "Cena: " << m.price << " " << "Porcje: " << " " << porcje << endl;
 			cout << "----------------" << endl;
 			cout << "Suma: " << suma << endl;
 			cout << "----------------" << endl;
-			cout << "1.Dodaj kolejne danie 2.Zamow 3.Wyswietl zamowienie 4.Usun danie 5. Anuluj zamowienie 6.Koniec" << endl;
-			wybor = kontrola_liczby();
-			if (wybor == 1) 
-				{ 
-				menu_dodaj(tablica_zamowienia);
-				
-				}
-			if (wybor == 2) 
-				{
-					cout << "----------------" << endl;
-					cout << "ZYCZYMY SMACZNEGO" << endl;
-					cout << "----------------" << endl;
-				}
-			if (wybor == 3)
-			{
-				wyswietl_zamowienia_z_tablicy(tablica_zamowienia);
-			}
-			
-				}
-			if (wybor == 4) 
-				{  
-					wyswietl_zamowienia_z_tablicy(tablica_zamowienia);
-				// tutaj wyswietla sie zamowione dania i ich ilosc
-				//
 
-				do 
-				{
-					cout << "Ktore danie chcesz usunac?" << endl;
-					id = kontrola_liczby();
-				} while (!(czy_jest_dodane(tablica_zamowienia, id)));
-				
-				
-				cout << "Ile porcji usunac?" << endl;
-				porcje = kontrola_liczby();
-				usun_z_tablicy(tablica_zamowienia, id, porcje);
-				 
-				}
-			if (wybor == 5)
-			{
-				do
-				{
-					cout << "czy anulowac?" << endl;
-					cout << "1.Tak 2.Nie" << endl;
-					wybor = kontrola_liczby();
-					if (wybor == 1) { cleanup(); }
-					if (wybor == 2) { menu_dodaj(tablica_zamowienia); }
-				} while (wybor != 1 && wybor != 2);
-			
 		}
-	}
-
+	}*/
 };

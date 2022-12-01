@@ -18,7 +18,6 @@ int main() {
     cleanup();
     imie = podaj_imie();
     na_miejscu = podaj_miejsce();
-    paragon_imie(imie);
     //Dane
     if (na_miejscu) 
     {
@@ -31,22 +30,11 @@ int main() {
         podaj_godzine(godzina, minuta, dzien_tyg, godz_dow, min_dow);
 
     }
-    //menu_nazwa(kontrola_liczby());
+    //wyswietla wszystkie dania w na liscie
     menu_lista();
-    menu_dodaj(tablica_zamowienia);
+    //menu programu
+    menu_glowne(tablica_zamowienia);
 
-    // Podglad tablicy
-    /*for (int i = 0; i < 20; i++)
-    {  
-        if (tablica_zamowienia[i][0] != 0)
-        {
-            cout << "nr id: " << tablica_zamowienia[i][0];
-            cout << "   ilosc:  " << tablica_zamowienia[i][1];
-            cout << endl;
-        }
-    }*/
-    //
-    
     //Koniec programu - zapisanie do TXT
     if (na_miejscu)
     {
