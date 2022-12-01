@@ -8,4 +8,5 @@ using namespace std;
 
 void menu_lista();
 string menu_nazwa(int);
+string menu_cena(int);
 void menu_dodaj(int [20][2]);
