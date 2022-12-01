@@ -135,11 +135,15 @@ void menu_dodaj(int tablica_zamowienia[20][2])
 					cout << "----------------" << endl;
 				}
 			if (wybor == 3) 
-				{	wybor = kontrola_liczby(); 
-					cout << "czy anulować?" << endl;
+				{	
+				do
+				{
+					cout << "czy anulowac?" << endl;
 					cout << "1.Tak 2.Nie" << endl;
+					wybor = kontrola_liczby();
 					if (wybor == 1) { cleanup(); }
 					if (wybor == 2) { menu_dodaj(tablica_zamowienia); }
+				} while (wybor != 1 && wybor != 2);
 				}
 			if (wybor == 4) 
 				{  
