@@ -1,14 +1,16 @@
 #include <iostream>
+#include <string>
 #include "kontrola_liczb.h"
+#include "input.h"
 using namespace std;
 
 int kontrola_liczby() {
-	int liczba;
+	string liczba;
 	bool blad = false;
 	do 
 	{
 		cin >> liczba;
-		if (cin.fail())
+		if (sprawdz_numer(liczba) == false)
 		{
 			cin.clear();
 			cin.ignore(INT_MAX, '\n');
@@ -17,7 +19,7 @@ int kontrola_liczby() {
 		}
 		else
 		{
-			return liczba;
+			return stoi(liczba);
 		}
 	} while (blad);
 }
