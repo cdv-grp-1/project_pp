@@ -182,7 +182,6 @@ void menu_glowne(int tablica_zamowienia[20][2])
 			cout << "----------------" << endl;
 			cout << "ZYCZYMY SMACZNEGO" << endl;
 			cout << "----------------" << endl;
-			wydrukuj_paragon(tablica_zamowienia);
 			break;
 		}
 		
