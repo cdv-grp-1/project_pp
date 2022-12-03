@@ -29,6 +29,7 @@ void paragon_godzina (int godzina, int minuta) {
 void  paragon_stolik (int line) {
     file.open("ticket.txt", ios::app);
     file <<"Nr stolika: "<< line << endl;
+    file << "----------------------" << endl;
     file.close();
 };
 void  paragon_imie (string word1) {
@@ -49,10 +50,10 @@ void paragon_adres(string miejsc, string uli, int nrdom, int nrmie) {
 void paragon_pozycja(string nazwa, double price, int porcja, double suma)
 {
     file.open("ticket.txt", ios::app);
-    file << setfill('.') << left << setw(40) << nazwa << "|" << porcja << " x " << setw(5) << price << "|" << setw(7) << suma << "PLN" << endl;
+    file << setfill('.') << left << setw(40) << nazwa << "|" << setw(2) << porcja << " x " << setw(5) << price << "|" << setw(7) << suma << "PLN" << endl;
     file.close();
 };
-void wydrukuj_paragon(int tablica_zamowienia[20][2])
+void paragon_dania(int tablica_zamowienia[20][2])
 {
     double cana_jednostkowa = 0;
     double cena_zbiorcza = 0;
@@ -75,7 +76,7 @@ void wydrukuj_paragon(int tablica_zamowienia[20][2])
     }
     file.open("ticket.txt", ios::app);
     file << "----------------------" << endl;
-    file << "Suma: " << suma << "PLN" << endl;
+    file << "Razem: " << right << setw(51) << suma << "PLN" << endl;
     file.close();
     
 };

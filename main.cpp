@@ -5,6 +5,7 @@
 #include "menu.h"
 #include "paragon.h"
 #include "zamowienie.h"
+#include "restauracja_dane.h"
 using namespace std;
 
 int nr, nr_domu, nr_mieszkania, minuta, godzina, dzien_tyg, godz_dow, min_dow;
@@ -17,6 +18,8 @@ int tablica_zamowienia[20][2] = { {0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0
 int main() {
     //wyczyszczenie paragonu
     cleanup();
+
+    dane_restauracji();
 
     //Dane
     imie = podaj_imie();
@@ -47,7 +50,7 @@ int main() {
         paragon_godzina(godz_dow, min_dow);
         paragon_adres(miejscowosc, ulica, nr_domu, nr_mieszkania);
     }
-    wydrukuj_paragon(tablica_zamowienia);
+    paragon_dania(tablica_zamowienia);
     
 
 
