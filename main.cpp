@@ -33,11 +33,12 @@ int main() {
     {
         podaj_adres(miejscowosc, ulica, nr_domu, nr_mieszkania);
         czas(minuta, godzina, dzien_tyg);
-        podaj_godzine(godzina, minuta, dzien_tyg, godz_dow, min_dow);
+        
     }
     
     //menu programu
     menu_glowne(tablica_zamowienia);
+    podaj_godzine(godzina, minuta, dzien_tyg, godz_dow, min_dow);
 
     //Koniec programu - zapisanie paragonu do TXT
     paragon_imie(imie);

@@ -19,10 +19,10 @@ string input(string str)
 {
     if (sprawdz_numer(str))
     {
-        //cout << str << "liczba";
+        
         return str;
     }
     else
-        //cout << str << "nie liczba";
+        
         return str;
 }

@@ -9,7 +9,7 @@ using namespace std;
 string podaj_imie() {
 	string imie;
 	cout << "Podaj swoje imie: ";
-	cin >> imie;
+	getline(cin, imie);
 	input(imie);
 	return imie;
 };
@@ -19,8 +19,9 @@ bool podaj_miejsce()
 	cout << "Czy chcesz zlozyc zamowienie na miejscu czy z dowozem?" << endl;
 	while (true) {
 		cout << "M - na miejscu, D - z dowozem: ";
-		cin >> odp;
+		getline(cin, odp);
 		input(odp);
+		
 		if (odp == "M" || odp == "m")
 		{
 			return true;
@@ -56,14 +57,16 @@ int nr_stolika() {
 void podaj_adres(string & miejscowosc, string & ulica, int & nr_domu, int & nr_mieszkania)
 {
 	cout << "Podaj miejscowosc: ";
-	cin >> miejscowosc;
+	miejscowosc = "";
+	getline(cin, miejscowosc);
 	input(miejscowosc);
 	cout << "ulica: ";
 	cin >> ulica;
 	input(ulica);
-	cout << "numer domu: ";
+	getline(cin, ulica);	cout << "numer domu: ";
 	nr_domu = kontrola_liczby();
 	cout << "numer mieszkania : ";
 	nr_mieszkania = kontrola_liczby();
+	
 };
 
