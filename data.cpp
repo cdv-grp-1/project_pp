@@ -57,16 +57,14 @@ int nr_stolika() {
 void podaj_adres(string & miejscowosc, string & ulica, int & nr_domu, int & nr_mieszkania)
 {
 	cout << "Podaj miejscowosc: ";
-	miejscowosc = "";
 	getline(cin, miejscowosc);
 	input(miejscowosc);
 	cout << "ulica: ";
-	cin >> ulica;
+	getline(cin, ulica);
 	input(ulica);
-	getline(cin, ulica);	cout << "numer domu: ";
+	cout << "numer domu: ";
 	nr_domu = kontrola_liczby();
 	cout << "numer mieszkania : ";
 	nr_mieszkania = kontrola_liczby();
 	
 };
-

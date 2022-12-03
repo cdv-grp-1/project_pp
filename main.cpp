@@ -10,12 +10,16 @@ using namespace std;
 
 int nr, nr_domu, nr_mieszkania, minuta, godzina, dzien_tyg, godz_dow, min_dow;
 string imie, miejscowosc, ulica;
-bool na_miejscu;
+bool na_miejscu = false;
 int tablica_zamowienia[20][2] = { {0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},
                                   {0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0} };
 
 
 int main() {
+
+    czas(minuta, godzina, dzien_tyg);
+    ktora_godzina(godzina, minuta , na_miejscu);
+
     //wyczyszczenie paragonu
     cleanup();
 
@@ -23,7 +27,12 @@ int main() {
 
     //Dane
     imie = podaj_imie();
-    na_miejscu = podaj_miejsce();
+    
+    if (!na_miejscu)
+    {
+        na_miejscu = podaj_miejsce();
+
+    }
     
     if (na_miejscu) 
     {
@@ -31,15 +40,12 @@ int main() {
     }
     else
     {
-        podaj_adres(miejscowosc, ulica, nr_domu, nr_mieszkania);
-        czas(minuta, godzina, dzien_tyg);
-        
+        podaj_adres(miejscowosc, ulica, nr_domu, nr_mieszkania); 
     }
     
     //menu programu
     menu_glowne(tablica_zamowienia);
-    podaj_godzine(godzina, minuta, dzien_tyg, godz_dow, min_dow);
-
+    czas_przygotowania(na_miejscu, godzina, minuta, dzien_tyg, godz_dow, min_dow);
     //Koniec programu - zapisanie paragonu do TXT
     paragon_imie(imie);
     if (na_miejscu)
@@ -48,6 +54,7 @@ int main() {
     }
     else
     {
+        
         paragon_godzina(godz_dow, min_dow);
         paragon_adres(miejscowosc, ulica, nr_domu, nr_mieszkania);
     }
