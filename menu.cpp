@@ -119,7 +119,7 @@ void menu_glowne(int tablica_zamowienia[20][2])
 			porcje = kontrola_liczby();
 			if (porcje < 1 || porcje > 20) 
 			{
-				cout << "Mozesz zamowic maksymalnie 20 porcji" << endl;
+				cout << "Mozesz zamowic maksymalnie 20 porcji tego dania" << endl;
 				blad = true;
 			}
 			else
@@ -128,8 +128,11 @@ void menu_glowne(int tablica_zamowienia[20][2])
 			}
 			} while (blad);
 
-			dodaj_do_tablicy(tablica_zamowienia, id, porcje);
-			cout << "Pomyslnie dodano danie do zamowienia "<< endl;
+			if (dodaj_do_tablicy(tablica_zamowienia, id, porcje))
+			{
+				cout << "Pomyslnie dodano danie do zamowienia " << endl;
+			}
+			
 			break;
 		}
 		case 2:

@@ -5,13 +5,24 @@
 #include "menu.h"
 #include <string>
 
-void dodaj_do_tablicy(int tablica_zamowienia[20][2], int id, int porcje)
+bool dodaj_do_tablicy(int tablica_zamowienia[20][2], int id, int porcje)
 {
+	bool sukces = true;
 	for (int i = 0; i < 20; i++)
 	{
 		if (tablica_zamowienia[i][0] == id)
 		{
-			tablica_zamowienia[i][1] += porcje;
+			if (tablica_zamowienia[i][1] + porcje > 20)
+			{
+				cout << "Mozesz zamowic maksymalnie 20 porcji tego dania!" << endl;
+				sukces = false;
+			}
+			else 
+			{
+				tablica_zamowienia[i][1] += porcje;
+				sukces = true;
+			}
+			
 			break;
 		}
 		else
@@ -25,6 +36,7 @@ void dodaj_do_tablicy(int tablica_zamowienia[20][2], int id, int porcje)
 		}
 
 	}
+	return sukces;
 };
 bool czy_jest_dodane(int tablica_zamowienia[20][2], int id)
 {
@@ -61,7 +73,7 @@ void wyswietl_zamowienia_z_tablicy(int tablica_zamowienia[20][2])
 	string nazwa_dania = "";
 	for (int i = 0; i < 20; i++)
 	{
-		if (tablica_zamowienia[i][0] != 0)
+		if (tablica_zamowienia[i][0] != 0 && tablica_zamowienia[i][1] != 0)
 		{
 			cana_jednostkowa = menu_cena(tablica_zamowienia[i][0]);
 			cena_zbiorcza = cana_jednostkowa * tablica_zamowienia[i][1];
