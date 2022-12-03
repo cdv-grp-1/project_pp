@@ -49,17 +49,16 @@ void menu_lista() {
 	json data = json::parse(f);
 	f.close();
 	string licznik[21] = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" };
-	
-	cout << "~~MENU~~" << endl;
+	cout << endl;
 	for (int i = 1; i <= 20; i++) {
 		auto m = data.at("danie" + licznik[i]).get<ns::meal_m>();
 		cout << "------------------------------------------------------------";
 		cout << "---------------------------------------------------------" << endl;
-		cout << "Pozycja nr. " << setw(2) << m.id << setw(100) << m.price << "PLN" << endl;
-		cout << m.type << endl;
-		cout << m.name << " " << m.text << endl;
+		cout << "Nr. " << setw(2) << m.id << setw(108) << m.price << "PLN" << endl;
+		cout << m.name << " " << m.text << endl;		
 		cout << "Skladniki: " << m.ingr << endl;
-		
+		cout << m.type << endl;
+
 	};
 	cout << "------------------------------------------------------------";
 	cout << "---------------------------------------------------------" << endl;
@@ -137,6 +136,7 @@ void menu_glowne(int tablica_zamowienia[20][2])
 		case 2:
 		{
 			menu_lista();
+			break;
 		}
 		
 		case 3:
@@ -179,9 +179,9 @@ void menu_glowne(int tablica_zamowienia[20][2])
 		}
 		case 6:
 		{
-			cout << "----------------" << endl;
+			cout << "-----------------" << endl;
 			cout << "ZYCZYMY SMACZNEGO" << endl;
-			cout << "----------------" << endl;
+			cout << "-----------------" << endl;
 			break;
 		}
 		

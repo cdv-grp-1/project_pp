@@ -108,7 +108,7 @@
     "id": 13,
     "type": "dania glowne",
     "name": "Golebki z kasze gryczane",
-    "text": "z sosem z prawdziwych pomidorow pelnych slońca",
+    "text": "z sosem z prawdziwych pomidorow pelnych slonca",
     "price": 35.73,
     "ingr": "wolowina, ryz, kapusta"
   },
@@ -140,7 +140,7 @@
     "id": 17,
     "type": "desery",
     "name": "Parfait chalwowe przez nas utarte",
-    "text": "z beze pistacjowe na soku z pomarańczy",
+    "text": "z beze pistacjowe na soku z pomaranczy",
     "price": 34,
     "ingr": "chalwa, jaja, pomarancza"
   },
