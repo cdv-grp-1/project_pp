@@ -24,26 +24,32 @@ void podaj_godzine(int godzina, int minuta, int& godz_dow, int& min_dow)
 	
 	do
 	{
-		cout << "Wybierz godzine dostawy z zakresu " << godzina + 1 << ":" << minuta << " - 22:00" << endl;
+		if (minuta > 9) {
+			cout << "Wybierz godzine dostawy z zakresu " << godzina + 1 << ":" << minuta << " - 22:00" << endl;
+		}
+		else {
+			cout << "Wybierz godzine dostawy z zakresu " << godzina + 1 << ":0" << minuta << " - 22:00" << endl;
+		}
+		
 		cout << "Godzina: ";
 		godz_dow = kontrola_liczby();
 		cout << "Minuta: ";
 		min_dow = kontrola_liczby();
 	} while ((godz_dow < godzina + 1) || (godz_dow == godzina + 1 && min_dow < minuta) || (godz_dow > 22 || godz_dow == 22 && min_dow > 0) || min_dow > 59);
-	cout << "Wybrano godzine: " << godz_dow << ":" << min_dow << endl;
+	if (minuta > 9) {
+		cout << "Wybrano godzine: " << godz_dow << ":" << min_dow << endl;
+	}
+	else {
+		cout << "Wybrano godzine: " << godz_dow << ":0" << min_dow << endl;
+	}
 	
 
 
 }
-void czas_przygotowania(bool na_miejscu, int godzina, int minuta, int godz_dow, int min_dow)
+void czas_przygotowania(bool na_miejscu, int godzina, int minuta, int &godz_dow, int &min_dow)
 {
 	cout << "Twoje zamowienie bedzie gotowe za ok 45 minut" << endl;
-	if (!na_miejscu)
-	{
-		podaj_godzine(godzina, minuta, godz_dow, min_dow);
-	}
-
-};
+	};
 void czy_lokal_jest_czynny(int godzina, int minuta, bool & na_miejscu)
 {
 	int odp = 0;

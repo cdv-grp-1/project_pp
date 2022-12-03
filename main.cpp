@@ -54,7 +54,7 @@ int main() {
     }
     else
     {
-        
+        podaj_godzine(godzina, minuta, godz_dow, min_dow);
         paragon_godzina(godz_dow, min_dow);
         paragon_adres(miejscowosc, ulica, nr_domu, nr_mieszkania);
     }
