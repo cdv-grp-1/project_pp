@@ -18,7 +18,7 @@ int tablica_zamowienia[20][2] = { {0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0
 int main() {
 
     czas(minuta, godzina, dzien_tyg);
-    ktora_godzina(godzina, minuta , na_miejscu);
+    czy_lokal_jest_czynny(godzina, minuta , na_miejscu);
 
     //wyczyszczenie paragonu
     cleanup();
@@ -45,7 +45,7 @@ int main() {
     
     //menu programu
     menu_glowne(tablica_zamowienia);
-    czas_przygotowania(na_miejscu, godzina, minuta, dzien_tyg, godz_dow, min_dow);
+    czas_przygotowania(na_miejscu, godzina, minuta, godz_dow, min_dow);
     //Koniec programu - zapisanie paragonu do TXT
     paragon_imie(imie);
     if (na_miejscu)
