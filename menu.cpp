@@ -59,8 +59,6 @@ void menu_lista() {
 		cout << m.type << endl;
 		cout << m.name << " " << m.text << endl;
 		cout << "Skladniki: " << m.ingr << endl;
-		//cout << "Cena: " << m.price << endl;
-		//cout << "------------------" << endl;
 		
 	};
 	cout << "------------------------------------------------------------";
@@ -95,6 +93,7 @@ void menu_glowne(int tablica_zamowienia[20][2])
 	int blad = false;
 	do
 	{
+		cout << endl;
 		cout << "1.Dodaj danie 2.Wyswietl menu 3.Wyswietl zamowienie 4.Usun danie 5. Anuluj zamowienie 6.Sfinalizuj zamowienie" << endl;
 		wybor = kontrola_liczby();
 		switch (wybor)
@@ -142,11 +141,13 @@ void menu_glowne(int tablica_zamowienia[20][2])
 		
 		case 3:
 		{
+			cout << endl;
 			wyswietl_zamowienia_z_tablicy(tablica_zamowienia);
 			break;
 		}
 		case 4:
 		{
+			cout << endl;
 			wyswietl_zamowienia_z_tablicy(tablica_zamowienia);
 			do
 			{
@@ -166,9 +167,14 @@ void menu_glowne(int tablica_zamowienia[20][2])
 				cout << "czy anulowac?" << endl;
 				cout << "1.Tak 2.Nie" << endl;
 				wybor = kontrola_liczby();
-				if (wybor == 1) { cleanup(); }
+				if (wybor == 1) 
+				{ 
+					wyzeruj_tablice(tablica_zamowienia); 
+					cout << "Pomyslnie anulowano zamowienie" << endl;
+				}
 				
 			} while (wybor != 1 && wybor != 2);
+			break;
 
 		}
 		case 6:
@@ -176,6 +182,7 @@ void menu_glowne(int tablica_zamowienia[20][2])
 			cout << "----------------" << endl;
 			cout << "ZYCZYMY SMACZNEGO" << endl;
 			cout << "----------------" << endl;
+			wydrukuj_paragon(tablica_zamowienia);
 			break;
 		}
 		

@@ -3,6 +3,7 @@
 #include "paragon.h"
 #include <string>  
 #include <ios>
+#include "menu.h"
 using namespace std;
 fstream file;
 void cleanup()
@@ -52,3 +53,24 @@ void paragon_pozycja(string nazwa, double price, int porcja, double suma)
     file << "Pozycja:" << nazwa<<"|"<< "Cena:" << price<< "|" <<"Ilosc:" << porcja << "|" << suma << endl;
     file.close();
 };
+void wydrukuj_paragon(int tablica_zamowienia[20][2])
+{
+    double cana_jednostkowa = 0;
+    double cena_zbiorcza = 0;
+    string nazwa_dania = "";
+    int porcja = 0;
+    for (int i = 0; i < 20; i++)
+    {
+        if (tablica_zamowienia[i][0] != 0)
+        {
+            porcja = tablica_zamowienia[i][1];
+            cana_jednostkowa = menu_cena(tablica_zamowienia[i][0]);
+            cena_zbiorcza = cana_jednostkowa * porcja;
+            nazwa_dania = menu_nazwa(tablica_zamowienia[i][0]);
+            paragon_pozycja(nazwa_dania, cana_jednostkowa, porcja, cena_zbiorcza);
+        }
+        
+    }
+    }
+    
+

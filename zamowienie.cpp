@@ -80,11 +80,19 @@ void wyswietl_zamowienia_z_tablicy(int tablica_zamowienia[20][2])
 			nazwa_dania = menu_nazwa(tablica_zamowienia[i][0]);
 			cout << "Nr " << setw(3) << tablica_zamowienia[i][0];
 			cout << setw(50) << nazwa_dania << " - ";
-			cout << setw(10) << cana_jednostkowa <<"PLN";
+			cout << setw(10) << cana_jednostkowa << "PLN";
 			cout << setw(10) << "x" << tablica_zamowienia[i][1];
-			cout << setw(10) << cena_zbiorcza<<"PLN";
+			cout << setw(10) << cena_zbiorcza << "PLN";
 			cout << endl;
 
 		}
 	}
-}
+};
+void wyzeruj_tablice(int tablica_zamowienia[20][2])
+{
+	for (int i = 0; i < 20; i++)
+	{
+		tablica_zamowienia[i][0] = 0;
+		tablica_zamowienia[i][1] = 0;
+	}
+};
