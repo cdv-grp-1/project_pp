@@ -17,12 +17,6 @@ bool sprawdz_numer(string str) {
 
 string input(string str)
 {
-    if (sprawdz_numer(str))
-    {
-        
-        return str;
-    }
-    else
-        
-        return str;
+    sprawdz_numer(str);
+    return str;
 }

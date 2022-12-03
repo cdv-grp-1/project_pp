@@ -5,15 +5,14 @@
 using namespace std;
 
 int kontrola_liczby() {
-	string liczba;
+	string liczba = "";
 	bool blad = false;
 	do 
 	{
-		cin >> liczba;
+		getline(cin, liczba);
+		if (liczba == "") { liczba = "0"; }
 		if (sprawdz_numer(liczba) == false)
 		{
-			cin.clear();
-			cin.ignore(INT_MAX, '\n');
 			blad = true;
 			cout << "Podaj liczbe: ";
 		}
