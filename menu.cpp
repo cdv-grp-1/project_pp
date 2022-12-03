@@ -90,6 +90,7 @@ void menu_glowne(int tablica_zamowienia[20][2])
 	int id = 0;
 	int porcje = 0;
 	int blad = false;
+	menu_lista();
 	do
 	{
 		cout << endl;
@@ -125,12 +126,20 @@ void menu_glowne(int tablica_zamowienia[20][2])
 				blad = false;
 			}
 			} while (blad);
-
-			if (dodaj_do_tablicy(tablica_zamowienia, id, porcje))
+			do
 			{
-				cout << "Pomyslnie dodano danie do zamowienia " << endl;
-			}
-			
+			cout << "Zatwierdzic?"<<endl;
+			cout << "1.Tak 2.Nie" << endl;
+			wybor = kontrola_liczby();
+			if (wybor == 1)
+				{
+					if (dodaj_do_tablicy(tablica_zamowienia, id, porcje))
+					{
+						cout << "Pomyslnie dodano danie do zamowienia " << endl;
+					}
+				}
+			} while (wybor != 1 && wybor !=2);
+						
 			break;
 		}
 		case 2:
