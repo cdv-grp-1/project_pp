@@ -59,7 +59,7 @@ void paragon_dania(int tablica_zamowienia[20][2])
     double cena_zbiorcza = 0;
     string nazwa_dania = "";
     int porcja = 0;
-    int suma = 0;
+    double suma = 0;
     for (int i = 0; i < 20; i++)
     {
         if (tablica_zamowienia[i][0] != 0)
