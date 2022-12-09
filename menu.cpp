@@ -198,41 +198,4 @@ void menu_glowne(int tablica_zamowienia[20][2])
 	} while (wybor !=6);
 };
 
-void menu_dodaj(int tablica_zamowienia[20][2])
-{
-	/*ifstream f("menu.json");
-	cout << "Wybierz danie" << endl;
-	int id = kontrola_liczby();
-	string licznik[21] = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" };
-	json data = json::parse(f);
-	f.close();
-	auto m = data.at("danie" + licznik[id]).get<ns::meal_m>();
-	cout << "Nazwa: " << m.name << endl;
-	cout << "Rodzaj: " << m.type << endl;
-	cout << "Cena: " << m.price << endl;
-	cout << "Czy chcesz dodac to danie za: " << m.price << "?" << endl;
-	cout << "1.Tak 2.Nie " << endl;
-	int wybor = kontrola_liczby();
-	if (wybor == 1)
-	{
-		cout << "Ile porcji?" << endl;
-		int porcje = kontrola_liczby();
-		double suma = porcje * m.price;
-		double razem=0;
-		cout << "Razem: " << suma << endl;
-		//cout << "Czy zatwierdzic?" << endl;
-		//cout << "1.Tak 2.Nie " << endl;
-		wybor = kontrola_liczby();
-		if (wybor == 1)
-		{
-			dodaj_do_tablicy(tablica_zamowienia, id, porcje);
-			paragon_pozycja(m.name, m.price, porcje, suma);
-			cout << "----------------" << endl;
-			cout << "dodano: " << m.name << " " << "Cena: " << m.price << " " << "Porcje: " << " " << porcje << endl;
-			cout << "----------------" << endl;
-			cout << "Suma: " << suma << endl;
-			cout << "----------------" << endl;
 
-		}
-	}*/
-};
